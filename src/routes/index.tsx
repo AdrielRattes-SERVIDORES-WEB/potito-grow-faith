@@ -2,9 +2,17 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import {
   Sparkles, BookHeart, Printer, Users, Check, Shield, Mail,
-  Infinity as InfinityIcon, ChevronDown, Star, Gift, Heart,
+  Infinity as InfinityIcon, ChevronDown, Star, Gift, Heart, GraduationCap,
 } from "lucide-react";
 import potitoMockup from "@/assets/potito-mockup.png";
+import heroPrayer from "@/assets/hero-prayer.jpg";
+import bonusDiario from "@/assets/bonus-diario.png";
+import bonusVersiculos from "@/assets/bonus-versiculos.png";
+import bonusGuia from "@/assets/bonus-guia.png";
+import bonusDesenhos from "@/assets/bonus-desenhos.png";
+import bonusPlanner from "@/assets/bonus-planner.png";
+import bonusesAll from "@/assets/bonuses-all.png";
+import marianaPhoto from "@/assets/mariana.jpg";
 
 export const Route = createFileRoute("/")({
   component: Landing,
@@ -109,36 +117,42 @@ const items = [
     title: "PDF con 50 Oraciones Infantiles Ilustradas",
     desc: "Oraciones organizadas por tema, con ilustraciones coloridas y lenguaje simple para niños de 3 a 12 años.",
     value: "VALORADO EN $29.90",
+    image: potitoMockup,
     tag: "PRODUCTO PRINCIPAL",
   },
   {
-    title: "50 Rótulos del Potito Listos para Imprimir",
-    desc: "Diseños coloridos y adorables para personalizar tu frasquito de oración.",
-    value: "VALORADO EN $9.90",
+    title: "Diario de Oración",
+    desc: "Un espacio especial para anotar las bendiciones recibidas y los pedidos del corazón.",
+    value: "VALORADO EN $7.90",
+    image: bonusDiario,
     tag: "BONO #1",
   },
   {
-    title: "Molde de la Caja de Oración",
-    desc: "Recorta, dobla y monta junto a tu hijo en menos de 10 minutos.",
-    value: "VALORADO EN $7.90",
+    title: "Versículos Kids",
+    desc: "Tarjetas con versículos ilustrados, fáciles de memorizar para los más pequeños.",
+    value: "VALORADO EN $4.90",
+    image: bonusVersiculos,
     tag: "BONO #2",
   },
   {
-    title: "Guía: Cómo Crear el Hábito de Orar con tu Hijo",
-    desc: "5 pasos simples para que la oración sea el momento favorito del día.",
-    value: "VALORADO EN $6.90",
+    title: "Guía de Padres",
+    desc: "Cómo conducir el momento devocional en familia, paso a paso, sin complicaciones.",
+    value: "VALORADO EN $9.90",
+    image: bonusGuia,
     tag: "BONO #3",
   },
   {
-    title: "Calendario de Oración Mensual",
-    desc: "30 oraciones organizadas por día para un mes completo de fe en familia.",
-    value: "VALORADO EN $5.90",
+    title: "Dibujos Bíblicos para Colorear",
+    desc: "Páginas para colorear con temas de oración y escenas bíblicas favoritas de los niños.",
+    value: "VALORADO EN $3.90",
+    image: bonusDesenhos,
     tag: "BONO #4",
   },
   {
-    title: "Tarjetas de Oración para Colorear",
-    desc: "50 tarjetas ilustradas para que tu hijo coloree mientras ora.",
-    value: "VALORADO EN $8.90",
+    title: "Planner Semanal de Oración",
+    desc: "Organiza la semana de oración en familia: un momento, un propósito, cada día.",
+    value: "VALORADO EN $5.90",
+    image: bonusPlanner,
     tag: "BONO #5",
   },
 ];
