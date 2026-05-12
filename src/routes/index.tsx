@@ -2,9 +2,17 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import {
   Sparkles, BookHeart, Printer, Users, Check, Shield, Mail,
-  Infinity as InfinityIcon, ChevronDown, Star, Gift, Heart,
+  Infinity as InfinityIcon, ChevronDown, Star, Gift, Heart, GraduationCap,
 } from "lucide-react";
 import potitoMockup from "@/assets/potito-mockup.png";
+import heroPrayer from "@/assets/hero-prayer.jpg";
+import bonusDiario from "@/assets/bonus-diario.png";
+import bonusVersiculos from "@/assets/bonus-versiculos.png";
+import bonusGuia from "@/assets/bonus-guia.png";
+import bonusDesenhos from "@/assets/bonus-desenhos.png";
+import bonusPlanner from "@/assets/bonus-planner.png";
+import bonusesAll from "@/assets/bonuses-all.png";
+import marianaPhoto from "@/assets/mariana.jpg";
 
 export const Route = createFileRoute("/")({
   component: Landing,
@@ -109,36 +117,42 @@ const items = [
     title: "PDF con 50 Oraciones Infantiles Ilustradas",
     desc: "Oraciones organizadas por tema, con ilustraciones coloridas y lenguaje simple para niños de 3 a 12 años.",
     value: "VALORADO EN $29.90",
+    image: potitoMockup,
     tag: "PRODUCTO PRINCIPAL",
   },
   {
-    title: "50 Rótulos del Potito Listos para Imprimir",
-    desc: "Diseños coloridos y adorables para personalizar tu frasquito de oración.",
-    value: "VALORADO EN $9.90",
+    title: "Diario de Oración",
+    desc: "Un espacio especial para anotar las bendiciones recibidas y los pedidos del corazón.",
+    value: "VALORADO EN $7.90",
+    image: bonusDiario,
     tag: "BONO #1",
   },
   {
-    title: "Molde de la Caja de Oración",
-    desc: "Recorta, dobla y monta junto a tu hijo en menos de 10 minutos.",
-    value: "VALORADO EN $7.90",
+    title: "Versículos Kids",
+    desc: "Tarjetas con versículos ilustrados, fáciles de memorizar para los más pequeños.",
+    value: "VALORADO EN $4.90",
+    image: bonusVersiculos,
     tag: "BONO #2",
   },
   {
-    title: "Guía: Cómo Crear el Hábito de Orar con tu Hijo",
-    desc: "5 pasos simples para que la oración sea el momento favorito del día.",
-    value: "VALORADO EN $6.90",
+    title: "Guía de Padres",
+    desc: "Cómo conducir el momento devocional en familia, paso a paso, sin complicaciones.",
+    value: "VALORADO EN $9.90",
+    image: bonusGuia,
     tag: "BONO #3",
   },
   {
-    title: "Calendario de Oración Mensual",
-    desc: "30 oraciones organizadas por día para un mes completo de fe en familia.",
-    value: "VALORADO EN $5.90",
+    title: "Dibujos Bíblicos para Colorear",
+    desc: "Páginas para colorear con temas de oración y escenas bíblicas favoritas de los niños.",
+    value: "VALORADO EN $3.90",
+    image: bonusDesenhos,
     tag: "BONO #4",
   },
   {
-    title: "Tarjetas de Oración para Colorear",
-    desc: "50 tarjetas ilustradas para que tu hijo coloree mientras ora.",
-    value: "VALORADO EN $8.90",
+    title: "Planner Semanal de Oración",
+    desc: "Organiza la semana de oración en familia: un momento, un propósito, cada día.",
+    value: "VALORADO EN $5.90",
+    image: bonusPlanner,
     tag: "BONO #5",
   },
 ];
@@ -262,11 +276,11 @@ function Landing() {
               <div className="absolute -inset-8 rounded-full bg-gradient-to-br from-primary/30 via-secondary/25 to-honey/30 blur-3xl" />
               <div className="relative float">
                 <img
-                  src={potitoMockup}
-                  alt="Frasquito Potito de Oración con papelitos coloridos"
+                  src={heroPrayer}
+                  alt="Mamá e hijo orando juntos con su Potito de Oración"
                   width={1024}
-                  height={1024}
-                  className="relative w-full drop-shadow-[0_30px_50px_rgba(192,150,200,0.45)]"
+                  height={1408}
+                  className="relative w-full rounded-[2rem] drop-shadow-[0_30px_50px_rgba(192,150,200,0.45)]"
                 />
               </div>
               <span className="absolute -top-2 right-4 rounded-2xl bg-honey px-4 py-2 font-display text-xl text-honey-foreground shadow-soft -rotate-6">
@@ -328,15 +342,17 @@ function Landing() {
                       : "bg-card ring-border shadow-soft hover:shadow-glow"
                   }`}
                 >
-                  <div className="flex items-start gap-4">
+                  <div className="flex flex-col items-start gap-5 sm:flex-row">
                     <div
-                      className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl ${
-                        it.main
-                          ? "bg-primary text-primary-foreground"
-                          : "bg-honey text-honey-foreground"
-                      } shadow-soft`}
+                      className={`relative shrink-0 overflow-hidden rounded-2xl bg-gradient-to-br from-secondary/30 to-primary/20 shadow-soft ${
+                        it.main ? "w-full sm:w-56" : "w-full sm:w-40"
+                      }`}
                     >
-                      {it.main ? <BookHeart className="h-6 w-6" /> : <Gift className="h-6 w-6" />}
+                      <img
+                        src={it.image}
+                        alt={it.title}
+                        className="h-full w-full object-cover"
+                      />
                     </div>
                     <div className="flex-1">
                       <span
@@ -366,6 +382,68 @@ function Landing() {
               </Reveal>
             ))}
           </div>
+          <Reveal delay={200}>
+            <div className="mt-14 overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-honey/25 via-card to-primary/15 p-6 shadow-soft ring-1 ring-border sm:p-10">
+              <div className="grid items-center gap-8 md:grid-cols-2">
+                <img
+                  src={bonusesAll}
+                  alt="Todos los bonos exclusivos del Potito de Oración"
+                  className="mx-auto w-full max-w-md rounded-2xl shadow-soft"
+                />
+                <div>
+                  <span className="inline-block rounded-full bg-honey px-4 py-1 text-xs font-extrabold uppercase tracking-widest text-honey-foreground">
+                    Bonos exclusivos incluidos
+                  </span>
+                  <h3 className="mt-4 font-display text-3xl text-foreground sm:text-4xl">
+                    Todo esto va contigo, hoy GRATIS
+                  </h3>
+                  <p className="mt-3 text-muted-foreground">
+                    Más de 5 materiales extras pensados para que la fe crezca en familia, día a día.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* AUTORA */}
+      <section className="px-5 py-20">
+        <div className="mx-auto max-w-5xl">
+          <Reveal>
+            <div className="grid items-center gap-10 rounded-[2.5rem] bg-card p-8 shadow-soft ring-1 ring-border sm:p-12 md:grid-cols-[auto_1fr]">
+              <div className="relative mx-auto">
+                <div className="absolute -inset-4 rounded-full bg-gradient-to-br from-primary/40 to-honey/40 blur-2xl" />
+                <img
+                  src={marianaPhoto}
+                  alt="Mariana Silva, profesora cristiana"
+                  className="relative h-48 w-48 rounded-full object-cover shadow-glow ring-4 ring-card sm:h-56 sm:w-56"
+                />
+              </div>
+              <div className="text-center md:text-left">
+                <span className="inline-flex items-center gap-2 rounded-full bg-primary/15 px-4 py-1 text-xs font-extrabold uppercase tracking-widest text-primary">
+                  <GraduationCap className="h-4 w-4" /> Quién está detrás
+                </span>
+                <h2 className="mt-4 font-display text-3xl text-foreground sm:text-4xl">
+                  Mariana Silva
+                </h2>
+                <p className="mt-1 font-bold text-primary">Profesora cristiana</p>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  Posgrado en neurociencia, educación y desarrollo infantil — PUCRS
+                </p>
+                <p className="mt-5 text-foreground/90">
+                  Soy apasionada por la educación cristiana infantil y dedicada a crear
+                  herramientas que acercan a los niños a Dios de forma ligera, lúdica e
+                  inolvidable.
+                </p>
+                <p className="mt-3 text-foreground/90">
+                  Con el <strong>Potito de Oración</strong> ya he ayudado a miles de familias a
+                  transformar el momento de la oración en una experiencia de alegría y conexión
+                  profunda entre padres, hijos y el Creador. 💛
+                </p>
+              </div>
+            </div>
+          </Reveal>
         </div>
       </section>
 
