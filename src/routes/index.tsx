@@ -75,7 +75,9 @@ function CtaButton({ children, size = "lg" }: { children: React.ReactNode; size?
   };
   return (
     <a
-      href="#checkout"
+      href="https://pay.hotmart.com/V105819098O?checkoutMode=10&bid=1778981190479"
+      target="_blank"
+      rel="noopener noreferrer"
       className={`pulse-cta inline-flex items-center justify-center gap-2 rounded-full bg-primary font-extrabold uppercase tracking-wide text-white transition-all duration-300 hover:brightness-110 ${sizes[size]}`}
     >
       {children}
